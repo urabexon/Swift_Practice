@@ -19,13 +19,13 @@ struct ContentView: View {
     // MARK: - 定数
     let typesOfNumber: [String] = ["temperature", "length", "time", "volume"]
     let lengthUnits: [String] = ["meters", "kilometers", "feet", "yards", "miles"]
-    let temperatureUnits: [String] = ["Celsius", "Fahrenheit"]  // 温度の単位（必要に応じて追加してください）
+    let temperatureUnits: [String] = ["Celsius", "Fahrenheit"]  // 温度の単位
     
     var body: some View {
         NavigationStack {
             Form {
                 // 測定項目の選択セクション
-                Section("何を測定する単位ですか？") {
+                Section("Measurement type") {
                     Picker("Type of Number", selection: $typeOfNumber) {
                         ForEach(typesOfNumber, id: \.self) { type in
                             Text(type)
